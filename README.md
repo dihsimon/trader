@@ -1,0 +1,2 @@
+# trader
+sistema de trader

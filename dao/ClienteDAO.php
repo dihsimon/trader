@@ -5,33 +5,33 @@ class ClienteDAO {
     function inserirClientes(Clientes $cliente) {
         include ("ConnectionFactory.php");
         $sql = mysql_query("insert into clientes (dt_cadastro,
-                                                        dt_inicial,
-                                                        dt_final,
+                                                        data_inicial,
+                                                        data_final,
                                                         nome,
+                                                        sobrenome,
                                                         cpf,
                                                         endereco,
                                                         bairro,
                                                         cep,
-														cidade,
+                                                        cidade,
+                                                        email,
                                                         complemento,
-                                                        codigo_plano,
-                                                        login,
                                                         senha,
                                                         nivel)
-                                                        values ('" . $cliente->getDataCadastro() . "','" .
-                $cliente->getDtInicial() . "','" .
-                $cliente->getDtFinal() . "','" .
+                                                        values (" . $cliente->getDataCadastro() . ",'" .
+                $cliente->getDataInicial() . "','" .
+                $cliente->getDataFinal() . "','" .
                 $cliente->getNome() . "','" .
+                $cliente->getSobrenome() . "','" .
                 $cliente->getCpf() . "','" .
                 $cliente->getEndereco() . "','" .
                 $cliente->getBairro() . "','" .
                 $cliente->getCep() . "','" .
                 $cliente->getCidade() . "','" .
-				$cliente->getComplemento() . "','" .
-                $cliente->getCodigoPlano() . "','" .
-                $cliente->getLogin() . "','" .
-                $cliente->getSenha() . "','" .
-                $cliente->getNivel() . "')");
+                $cliente->getEmail() . "','" .
+		$cliente->getComplemento() . "','" .
+                $senha . "'," .
+                $cliente->getNivel() . ")");
 
         switch (true) {
             case mysql_errno($db) > 0: {

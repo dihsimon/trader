@@ -1,0 +1,37 @@
+
+/* 
+    Created on : 08/02/2017, 21:46:55
+    Author     : Diego
+*/
+.divCentro {
+    position: absolute;
+    top: -1%;
+    left: 17%;
+    right: 30%;
+    height: 60%;
+    /*width: 50%;*/
+}
+
+.divConsultas {
+    position: absolute;
+    top: 2%;
+    left: 22%;
+    right: 30%;
+    height: 60%;
+    /*width: 50%;*/
+}
+
+
+.divLoading {
+    position: absolute;
+    top: 40%;
+    left: 40%;
+    height: 60%; 
+}
+
+.divItens {
+    position: absolute;
+    top: 5%;
+    left: 330%; 
+}
+

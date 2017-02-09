@@ -4,7 +4,7 @@
     $SERVIDOR="localhost";
     $USUARIO="root";
     $SENHA="3506";
-    $NOMEDABASE="trader";    
+    $NOMEDABASE="trader_db";    
     $err_level = error_reporting(0);  
     $db= mysql_connect($SERVIDOR,$USUARIO,$SENHA) or die ("Erro ao conectar ao banco.");  
     $banco=mysql_select_db($NOMEDABASE,$db) or die ("Problemas ao escolher a base de dados");

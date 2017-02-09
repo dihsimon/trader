@@ -9,15 +9,42 @@ class Clientes {
     private $dataInicial;
     private $dataFinal;
     private $nome;
+    private $sobrenome;
     private $cpf;
     private $endereco;
     private $bairro;
     private $cep;
     private $cidade;
-    private $codigoPlano;
-    private $login;
-	private $senha;
-	private $nivel;
+    private $email;
+    private $complemento;
+    private $senha;
+    private $nivel;
+    
+    function getSobrenome() {
+        return $this->sobrenome;
+    }
+
+    function getEmail() {
+        return $this->email;
+    }
+
+    function getComplemento() {
+        return $this->complemento;
+    }
+
+    function setSobrenome($sobrenome) {
+        $this->sobrenome = $sobrenome;
+    }
+
+    function setEmail($email) {
+        $this->email = $email;
+    }
+
+    function setComplemento($complemento) {
+        $this->complemento = $complemento;
+    }
+
+        
 
     function getCodigo() {
         return $this->codigo;

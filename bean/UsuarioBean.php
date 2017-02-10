@@ -18,6 +18,7 @@
         $cliente = $dao->validaLogin($cliente);
         if ($cliente->getNivel() > 0) {
             echo "<script>alert('Bem vindo ao sistema " . $cliente->getNome() . "');</script>";
+            $_SESSION['logado'] = serialize($cliente);
             echo ("<div class='divLoading' id='topo'>");
             echo ("<img src='../imagens/carregando.gif' width='250' height='250'/> ");
             echo ("</div>");

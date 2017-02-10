@@ -3,6 +3,7 @@ require_once("../util/ValidaLogin.php");
 require_once ("../model/Clientes.php");
 $cliente = new Clientes();
 $cliente = unserialize($_SESSION['logado']);
+
 ?>
 <!DOCTYPE html>
 <html>

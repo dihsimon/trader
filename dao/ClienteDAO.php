@@ -63,6 +63,7 @@ class ClienteDAO {
             case mysql_errno($db) == 0: {
                     $consulta = mysql_fetch_object($sql);
                     $cliente->setNome($consulta->nome);
+                    $cliente->setSobrenome($consulta->sobrenome);
                     $cliente->setDataCadastro($consulta->dt_cadastro);
                     $cliente->setDataInicial($consulta->dt_inicial);
                     $cliente->setDataFinal($consulta->dt_final);

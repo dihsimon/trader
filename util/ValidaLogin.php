@@ -8,8 +8,10 @@
         require_once (__ROOT__.'/model/Clientes.php');
         $cliente = new Clientes();
         $cliente = unserialize($_SESSION['logado']);
+        
         if ($cliente->getNivel()==1 || $cliente->getNivel()==2){            
             require_once(__ROOT__.'/painel/Menu.php');   
+            
         }else{
             echo "<meta http-equiv='refresh' content='1;url=../painel/index.php'";
             die();

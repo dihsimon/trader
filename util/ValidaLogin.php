@@ -5,7 +5,7 @@
         echo "<meta http-equiv='refresh' content='1;url=../login/index.php'";
     }else{
         define('__ROOT__', dirname(dirname(__FILE__)));
-        require_once (__ROOT__.'/model/Usuarios.php');
+        require_once (__ROOT__.'/model/Clientes.php');
         $cliente = new Clientes();
         $cliente = unserialize($_SESSION['logado']);
         if ($cliente->getNivel()==1 || $cliente->getNivel()==2){            

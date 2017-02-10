@@ -1,8 +1,8 @@
-﻿<?php session_start();
-//require_once('../util/ValidaLogin.php');
-//require_once ("../model/Usuarios.php");
-//$user = new Usuarios;
-//$user = unserialize($_SESSION['logado']);
+<?php session_start();
+require_once("../util/ValidaLogin.php");
+require_once ("../model/Clientes.php");
+$cliente = new Clientes();
+$cliente = unserialize($_SESSION['logado']);
 ?>
 <!DOCTYPE html>
 <html>
@@ -53,7 +53,7 @@
                             <img src="dist/img/administrator.png" class="img-circle" alt="User Image">
                         </div>
                         <div class="pull-left info">
-                            <p><?php echo "Olá, " . $user->getLogin(); ?></p>
+                            <p><?php echo "Olá, " . $cliente->getNome(); ?></p>
                             <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                         </div>
                     </div>
@@ -75,7 +75,7 @@
                                 <i class="fa fa-dashboard"></i> <span>Cadastros</span> <i class="fa fa-angle-left pull-right"></i>
                             </a>
                             <ul class="treeview-menu">
-                                //<?php if ($user->getNivel() == 1) { ?>
+                                //<?php if ($cliente->getNivel() == 2) { ?>
                                     <li class="active"><a href="CadastroUsuario.php"><i class="fa fa-circle-o"></i> Usuários</a></li>
                                 //<?php } ?>
                                 <li><a href="CadastroArquivos.php"><i class="fa fa-circle-o"></i> Arquivos</a></li>

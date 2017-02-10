@@ -20,7 +20,7 @@
                 <p class="login-box-msg">Faça Login para iniciar a sua sessão</p>
                 <form action="../bean/UsuarioBean.php" method="post">
                     <div class="form-group has-feedback">
-                        <input name="login" id="login" type="email" class="form-control" placeholder="E-mail">
+                        <input name="email" id="email" type="email" class="form-control" placeholder="E-mail">
                         <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
                     </div>
                     <div class="form-group has-feedback">

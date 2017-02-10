@@ -53,7 +53,7 @@ class ClienteDAO {
     function validaLogin(Clientes $cliente) {
         include ("ConnectionFactory.php");
         $senhacript = md5($cliente->getSenha() . "Kuhaku" . $cliente->getSenha());
-        $sql = mysql_query("Select * from clientes where login='" . $cliente->getLogin()
+        $sql = mysql_query("Select * from clientes where email='" . $cliente->getEmail()
                 . "' and senha='" . $senhacript . "'");
         switch (true) {
             case mysql_errno($db) > 0: {
@@ -70,11 +70,39 @@ class ClienteDAO {
                     $cliente->setEndereco($consulta->endereco);
                     $cliente->setCep($consulta->cep);
                     $cliente->setComplemento($consulta->complemento);
-                    $cliente->setCodigo_plano($consulta->codigo_plano);
-                    $cliente->setLogin($consulta->login);
                     $cliente->setCidade($consulta->cidade);
+                    $cliente->setEmail($consulta->email);
                     $cliente->setNivel($consulta->nivel); // 1 administrador - 2 usuário
+                    break;
+                }
+        }
+        return $cliente;
+    }
 
+    function buscarPoCodigo($codigo) {
+        include ("ConnectionFactory.php");
+        $sql = mysql_query("select * from clientes where codigo = '$codigo';");
+
+        switch (true) {
+            case mysql_errno($db) > 0: {
+                    echo "Erro: " . mysql_errno() . "-" . mysql_error($db);
+                    break;
+                }
+            case mysql_errno($db) == 0: {
+                    $cliente = new Clientes();
+                    $consulta = mysql_fetch_object($sql);
+                    $cliente->setNome($consulta->nome);
+                    $cliente->setDataCadastro($consulta->dt_cadastro);
+                    $cliente->setDataInicial($consulta->dt_inicial);
+                    $cliente->setDataFinal($consulta->dt_final);
+                    $cliente->setCpf($consulta->cpf);
+                    $cliente->setEndereco($consulta->endereco);
+                    $cliente->setCep($consulta->cep);
+                    $cliente->setComplemento($consulta->complemento);
+                    $cliente->setCidade($consulta->cidade);
+                    $cliente->setEmail($consulta->email);
+                    $cliente->setNivel($consulta->nivel); // 1 administrador - 2 usuário
+                    $cliente->setCodigo($consulta->codigo); // 1 administrador - 2 usuário
                     break;
                 }
         }
@@ -117,7 +145,7 @@ class ClienteDAO {
         return 1;
     }
 
-    function buscarPorCodigo(Cliente $cliente) {
+    function buscarPorC(Cliente $cliente) {
         include ("Conexao.php");
 
         $sql = mysql_query("Select * from cliente where codigo=" . $cliente->getCodigo());

@@ -16,10 +16,10 @@
         $cliente->setDataInicial('2017-00-00');
         $cliente->setDataFinal('2017-00-00');
         $cliente->setCpf($_POST['cpf']);
+        $cliente->setEmail($_POST['email']);
         
         $resultCpf = $dao->validarCPF($cliente->getCpf());
-        
-        if($resultCpf[0] > 0){
+        if($resultCpf > 0){
             echo "<script>alert('CPF já cadastrado.');</script>";
             echo ("<div class='divLoading' id='topo'>");
             echo ("<img src='../imagens/carregando.gif' width='250' height='250'/> ");
@@ -27,12 +27,20 @@
             echo "<meta http-equiv='refresh' content='1;url=../cadastro/index.html'>";
             die();
         }
-        
+        $resultEmail = $dao->validaEmail($cliente->getEmail());
+        if($resultEmail > 0){
+            echo "<script>alert('E-mail já cadastrado, Por favor utilize outro E-mail.');</script>";
+            echo ("<div class='divLoading' id='topo'>");
+            echo ("<img src='../imagens/carregando.gif' width='250' height='250'/> ");
+            echo ("</div>");
+            echo "<meta http-equiv='refresh' content='1;url=../cadastro/index.html'>";
+            die();
+        }
+       
         $cliente->setEndereco($_POST['endereco']);
         $cliente->setBairro($_POST['bairro']);
         $cliente->setCep($_POST['cep']);
         $cliente->setCidade($_POST['cidade']);
-        $cliente->setEmail($_POST['email']);
         $cliente->setComplemento($_POST['complemento']);
         $cliente->setSenha($_POST['password']);
         $cliente->setNivel(2);

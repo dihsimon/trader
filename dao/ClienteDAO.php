@@ -30,7 +30,7 @@ class ClienteDAO {
                 $cliente->getCep() . "','" .
                 $cliente->getCidade() . "','" .
                 $cliente->getEmail() . "','" .
-		$cliente->getComplemento() . "','" .
+                $cliente->getComplemento() . "','" .
                 $senhacript . "'," .
                 $cliente->getNivel() . ")");
 
@@ -49,7 +49,8 @@ class ClienteDAO {
         }
         return 1;
     }
-	function validaLogin(Clientes $cliente) {
+
+    function validaLogin(Clientes $cliente) {
         include ("ConnectionFactory.php");
         $senhacript = md5($cliente->getSenha() . "Kuhaku" . $cliente->getSenha());
         $sql = mysql_query("Select * from clientes where login='" . $cliente->getLogin()
@@ -61,29 +62,27 @@ class ClienteDAO {
                 }
             case mysql_errno($db) == 0: {
                     $consulta = mysql_fetch_object($sql);
-					$cliente->setNome($consulta->nome);
-					$cliente->setDataCadastro($consulta->dt_cadastro);
-					$cliente->setDataInicial($consulta->dt_inicial);
-					$cliente->setDataFinal($consulta->dt_final);
-					$cliente->setCpf($consulta->cpf);
-					$cliente->setEndereco($consulta->endereco);
-					$cliente->setCep($consulta->cep);
-					$cliente->setComplemento($consulta->complemento);
-					$cliente->setCodigo_plano($consulta->codigo_plano);
-					$cliente->setLogin($consulta->login);
-					$cliente->setCidade($consulta->cidade);
-					$cliente->setNivel($consulta->nivel);// 1 administrador - 2 usuário
-					
+                    $cliente->setNome($consulta->nome);
+                    $cliente->setDataCadastro($consulta->dt_cadastro);
+                    $cliente->setDataInicial($consulta->dt_inicial);
+                    $cliente->setDataFinal($consulta->dt_final);
+                    $cliente->setCpf($consulta->cpf);
+                    $cliente->setEndereco($consulta->endereco);
+                    $cliente->setCep($consulta->cep);
+                    $cliente->setComplemento($consulta->complemento);
+                    $cliente->setCodigo_plano($consulta->codigo_plano);
+                    $cliente->setLogin($consulta->login);
+                    $cliente->setCidade($consulta->cidade);
+                    $cliente->setNivel($consulta->nivel); // 1 administrador - 2 usuário
+
                     break;
                 }
         }
         return $cliente;
     }
-	
 
     function validarCPF($cpf) {
         include ("ConnectionFactory.php");
-
         $sql = mysql_query("select * from clientes where cpf = '$cpf';");
 
         switch (true) {
@@ -92,7 +91,26 @@ class ClienteDAO {
                     break;
                 }
             case mysql_errno($db) == 0: {
-                    return $sql;
+                    $consulta = mysql_fetch_array($sql);
+                    return $consulta[0];
+                    break;
+                }
+        }
+        return 1;
+    }
+
+    function validaEmail($email) {
+        include ("ConnectionFactory.php");
+        $sql = mysql_query("select * from clientes where email = '$email';");
+
+        switch (true) {
+            case mysql_errno($db) > 0: {
+                    echo "Erro: " . mysql_errno() . "-" . mysql_error($db);
+                    break;
+                }
+            case mysql_errno($db) == 0: {
+                    $consulta = mysql_fetch_array($sql);
+                    return $consulta[0];
                     break;
                 }
         }
@@ -125,7 +143,7 @@ class ClienteDAO {
                     $cliente->setCpf($consulta[12]);
                     $cliente->setPorcentagem($consulta[13]);
                     $cliente->setCodigo($consulta[0]);
-                    
+
                     break;
                 }
         }
@@ -164,27 +182,26 @@ class ClienteDAO {
         }
         return 1;
     }
-    
-    function excluir(Cliente $cliente){
-            include ("Conexao.php");
-            
-            $sql = mysql_query("delete from cliente where codigo=".$cliente->getCodigo());
 
-            switch(true){
-                case mysql_errno($db)>0:{
-                    echo "Erro: ".mysql_errno()."-".mysql_error($db);
+    function excluir(Cliente $cliente) {
+        include ("Conexao.php");
+
+        $sql = mysql_query("delete from cliente where codigo=" . $cliente->getCodigo());
+
+        switch (true) {
+            case mysql_errno($db) > 0: {
+                    echo "Erro: " . mysql_errno() . "-" . mysql_error($db);
                     $query = mysql_query("ROLLBACK");
                     return 1;
                     break;
                 }
-                case mysql_errno($db)==0:{
+            case mysql_errno($db) == 0: {
                     $query = mysql_query("COMMIT");
                     return 0;
                     break;
                 }
-            }
-            return 1;
         }
+        return 1;
+    }
 
 }
-

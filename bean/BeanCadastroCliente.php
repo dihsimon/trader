@@ -16,6 +16,18 @@
         $cliente->setDataInicial('2017-00-00');
         $cliente->setDataFinal('2017-00-00');
         $cliente->setCpf($_POST['cpf']);
+        
+        $resultCpf = $dao->validarCPF($cliente->getCpf());
+        
+        if($resultCpf[0] > 0){
+            echo "<script>alert('CPF já cadastrado.');</script>";
+            echo ("<div class='divLoading' id='topo'>");
+            echo ("<img src='../imagens/carregando.gif' width='250' height='250'/> ");
+            echo ("</div>");
+            echo "<meta http-equiv='refresh' content='1;url=../cadastro/index.html'>";
+            die();
+        }
+        
         $cliente->setEndereco($_POST['endereco']);
         $cliente->setBairro($_POST['bairro']);
         $cliente->setCep($_POST['cep']);

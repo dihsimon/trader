@@ -1,252 +1,276 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <!-- This file has been downloaded from Bootsnipp.com. Enjoy! -->
-    <title>Bem Vind</title>
+    <head>
+        <meta charset="utf-8">
+        <!-- This file has been downloaded from Bootsnipp.com. Enjoy! -->
+        <title>Bem Vindo - Cadastre se</title>
         <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
-	    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
+        <link href="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/css/bootstrap.min.css" rel="stylesheet">
+        <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
         <link rel="stylesheet" href="https://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
         <link rel="stylesheet" href="dist/css/AdminLTE.min.css">
         <link rel="stylesheet" href="plugins/iCheck/square/blue.css">
-    <style type="text/css">
-.colorgraph {
-  height: 5px;
-  border-top: 0;
-  background: #c4e17f;
-  border-radius: 5px;
-  background-image: -webkit-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
-  background-image: -moz-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
-  background-image: -o-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
-  background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
-}
-body{
-	background-color:#FFFFFF; 
-}
-h2{
-	color: black;
-}
-    </style>
-    <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
-    <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
-	<script type="text/javascript">
-    function validarDados() {
-        var nome = document.getElementById("nome").value;
-        if (nome == "") {
-            alert("Nome deve ser informado.");
-            return;
-        }
-		var sobrenome = document.getElementById("sobrenome").value;
-		if (sobrenome == "") {
-            alert("Sobrenome deve ser informado.");
-            return;
-        }
-		var endereco = document.getElementById("endereco").value;
-        if (endereco == "") {
-            alert("Endereço deve ser informado.");
-            return;
-        }
-		var cep = document.getElementById("cep").value;
-		if (cep == "") {
-            alert("CEP deve ser informado.");
-            return;
-        }
-		
-		var cpf = document.getElementById("cpf").value;
-		if (cpf == "") {
-            alert("CPF deve ser informado.");
-            return;
-        }
-        var password = document.getElementById("password").value;
-        if (password == "") {
-            alert("Senha deve ser informado.");
-            return;
-        }
-        var password_confirmation = document.getElementById("password_confirmation").value;
-        if (password_confirmation=="") {
-            alert("Confirmação da senha deve ser informado")
-            return;
-			}
-			
-		if(password.length< 6 && password_confirmation < 6){
-		alert("Senha deve conter mais que 6 caracteres")
-            return;
-		}
-		
-
-        document.forms['formulario'].submit();
-    }
-</script>
-</head>
-<body>
-<div class="container">
-
-<div class="row">
-    <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
-		<form role="form" action="" method="POST" id="formulario">
-			<h2><small><b><p style="color:#696969;">Bem Vindo - Cadastre ou efetue login para acessar o painel</p></b></small></h2>
-			<hr class="colorgraph">
-			<div class="row">
-				<div class="col-xs-12 col-sm-6 col-md-6">
-					<div class="form-group">
-                        <input type="text" name="nome" id="nome" class="form-control input-lg" placeholder="Nome" tabindex="1">
-					</div>
-				</div>
-				<div class="col-xs-12 col-sm-6 col-md-6">
-					<div class="form-group">
-						<input type="text" name="sobrenome" id="sobrenome" class="form-control input-lg" placeholder="Sobrenome" tabindex="2">
-					</div>
-				</div>
-			</div>
-			<div class="form-group">
-				<input type="email" name="email" id="email" class="form-control input-lg" placeholder="E-mail" tabindex="3">
-			</div>
-			
-			
-			<div class="form-group">
-				<input type="text" name="endereco" id="endereco" class="form-control input-lg" placeholder="Endereço" tabindex="4">
-			</div>
-			
-			<div class="row">
-				<div class="col-xs-12 col-sm-6 col-md-6">
-					<div class="form-group">
-						<input type="text" name="cep" id="cep" class="form-control input-lg" placeholder="Cep" tabindex="5">
-					</div>
-				</div>
-				<div class="col-xs-12 col-sm-6 col-md-6">
-					<div class="form-group">
-						<input type="text" name="cpf" id="cpf" class="form-control input-lg" placeholder="CPF" tabindex="6">
-					</div>
-				</div>
-			</div>
-			<div class="form-group">
-				<input type="text" name="complemento" id="complemento" class="form-control input-lg" placeholder="Complemento" tabindex="4">
-			</div>
-			
-			<div class="row">
-				<div class="col-xs-12 col-sm-6 col-md-6">
-					<div class="form-group">
-						<input type="password" name="password" id="password" required class="form-control input-lg" placeholder="Password" tabindex="5">
-					</div>
-				</div>
-				<div class="col-xs-12 col-sm-6 col-md-6">
-					<div class="form-group">
-						<input type="password" name="password_confirmation" required id="password_confirmation" class="form-control input-lg" placeholder="Confirm Password" tabindex="6">
-					</div>
-				</div>
-			</div>
-			<div class="row">
-				<div class="col-xs-4 col-sm-3 col-md-3">
-					<span class="button-checkbox">
-						<button type="button" class="btn" data-color="info" tabindex="7">Eu Aceito</button>
-                        <input type="checkbox" name="t_and_c" id="t_and_c" class="hidden" value="1">
-					</span>
-				</div>
-				<div class="col-xs-8 col-sm-9 col-md-9">
-					 Ao clicar em <strong class="label label-primary">Registrar</strong>, você concorda <a href="#" data-toggle="modal" data-target="#t_and_c_m">com os Termos e Condições </a> estabelecidos neste site, incluindo o uso de Cookies.
-				</div>
-			</div>
-			
-			<hr class="colorgraph">
-			<div class="row">
-				<div class="col-xs-12 col-md-6"><input type="button" value="Registrar" class="btn btn-primary btn-block btn-lg" 
-				tabindex="7" onclick=validarDados(this);></div>
-				<div class="col-xs-12 col-md-6"><a href="painel/index.php" class="btn btn-success btn-block btn-lg">Efetuar Login</a></div>
-			</div>
-		</form>
-	</div>
-</div>
-<!-- Modal -->
-<div class="modal fade" id="t_and_c_m" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-	<div class="modal-dialog modal-lg">
-		<div class="modal-content">
-			<div class="modal-header">
-				<button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
-				<h4 class="modal-title" id="myModalLabel">Termos e condições</h4>
-			</div>
-			<div class="modal-body">
-				<p>Por Termo aqui.</p>
-				<p>Por Termo aqui.</p>
-				<p>Por Termo aqui.</p>
-				<p>Por Termo aqui.</p>
-				<p>Por Termo aqui.</p>
-				<p>Por Termo aqui.</p>
-			</div>
-			<div class="modal-footer">
-				<button type="button" class="btn btn-primary" data-dismiss="modal">Eu Aceito</button>
-			</div>
-		</div><!-- /.modal-content -->
-	</div><!-- /.modal-dialog -->
-</div><!-- /.modal -->
-</div>
-<script type="text/javascript">
-$(function () {
-    $('.button-checkbox').each(function () {
-
-        // Settings
-        var $widget = $(this),
-            $button = $widget.find('button'),
-            $checkbox = $widget.find('input:checkbox'),
-            color = $button.data('color'),
-            settings = {
-                on: {
-                    icon: 'glyphicon glyphicon-check'
-                },
-                off: {
-                    icon: 'glyphicon glyphicon-unchecked'
+        <script type="text/javascript" src="../painel/bootstrap/js/mascaras.js"></script>
+        <style type="text/css">
+            .colorgraph {
+                height: 5px;
+                border-top: 0;
+                background: #c4e17f;
+                border-radius: 5px;
+                background-image: -webkit-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+                background-image: -moz-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+                background-image: -o-linear-gradient(left, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+                background-image: linear-gradient(to right, #c4e17f, #c4e17f 12.5%, #f7fdca 12.5%, #f7fdca 25%, #fecf71 25%, #fecf71 37.5%, #f0776c 37.5%, #f0776c 50%, #db9dbe 50%, #db9dbe 62.5%, #c49cde 62.5%, #c49cde 75%, #669ae1 75%, #669ae1 87.5%, #62c2e4 87.5%, #62c2e4);
+            }
+            body{
+                background-color:#FFFFFF; 
+            }
+            h2{
+                color: black;
+            }
+        </style>
+        <script src="http://code.jquery.com/jquery-1.11.1.min.js"></script>
+        <script src="http://netdna.bootstrapcdn.com/bootstrap/3.1.0/js/bootstrap.min.js"></script>
+        <script type="text/javascript">
+            function validarDados() {
+                var nome = document.getElementById("nome").value;
+                if (nome == "") {
+                    alert("Nome deve ser informado.");
+                    return;
                 }
-            };
+                var sobrenome = document.getElementById("sobrenome").value;
+                if (sobrenome == "") {
+                    alert("Sobrenome deve ser informado.");
+                    return;
+                }
+                var endereco = document.getElementById("endereco").value;
+                if (endereco == "") {
+                    alert("Endereço deve ser informado.");
+                    return;
+                }
+                var cep = document.getElementById("cep").value;
+                if (cep == "") {
+                    alert("CEP deve ser informado.");
+                    return;
+                }
 
-        // Event Handlers
-        $button.on('click', function () {
-            $checkbox.prop('checked', !$checkbox.is(':checked'));
-            $checkbox.triggerHandler('change');
-            updateDisplay();
-        });
-        $checkbox.on('change', function () {
-            updateDisplay();
-        });
+                var cpf = document.getElementById("cpf").value;
+                if (cpf == "") {
+                    alert("CPF deve ser informado.");
+                    return;
+                }
+                var cidade = document.getElementById("cidade").value;
+                if (cidade == "") {
+                    alert("Cidade deve ser informado.");
+                    return;
+                }
+                var bairro = document.getElementById("bairro").value;
+                if (bairro == "") {
+                    alert("Bairro deve ser informado.");
+                    return;
+                }
+                
+                var password = document.getElementById("password").value;
+                if (password == "") {
+                    alert("Senha deve ser informado.");
+                    return;
+                }
+                var password_confirmation = document.getElementById("password_confirmation").value;
+                if (password_confirmation == "") {
+                    alert("Confirmação da senha deve ser informado");
+                    return;
+                }
 
-        // Actions
-        function updateDisplay() {
-            var isChecked = $checkbox.is(':checked');
+                if (password.length < 6 && password_confirmation < 6) {
+                    alert("Senha deve conter mais que 6 caracteres");
+                    return;
+                }
 
-            // Set the button's state
-            $button.data('state', (isChecked) ? "on" : "off");
 
-            // Set the button's icon
-            $button.find('.state-icon')
-                .removeClass()
-                .addClass('state-icon ' + settings[$button.data('state')].icon);
-
-            // Update the button's color
-            if (isChecked) {
-                $button
-                    .removeClass('btn-default')
-                    .addClass('btn-' + color + ' active');
+                document.forms['formulario'].submit();
             }
-            else {
-                $button
-                    .removeClass('btn-' + color + ' active')
-                    .addClass('btn-default');
-            }
-        }
+        </script>
+    </head>
+    <body>
+        <div class="container">
 
-        // Initialization
-        function init() {
+            <div class="row">
+                <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+                    <form role="form" action="../bean/BeanCadastroCliente.php" method="POST" id="formulario">
+                        <h2><small><b><p style="color:#696969;">Bem Vindo - Cadastre ou efetue login para acessar o painel</p></b></small></h2>
+                        <hr class="colorgraph">
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <input type="text" name="nome" id="nome" class="form-control input-lg" placeholder="Nome" tabindex="1">
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <input type="text" name="sobrenome" id="sobrenome" class="form-control input-lg" placeholder="Sobrenome" tabindex="2">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="email" name="email" id="email" class="form-control input-lg" placeholder="E-mail" tabindex="3">
+                        </div>
 
-            updateDisplay();
 
-            // Inject the icon if applicable
-            if ($button.find('.state-icon').length == 0) {
-                $button.prepend('<i class="state-icon ' + settings[$button.data('state')].icon + '"></i>');
-            }
-        }
-        init();
-    });
-});
-</script>
-</body>
+                        <div class="form-group">
+                            <input type="text" name="endereco" id="endereco" class="form-control input-lg" placeholder="Endereço" tabindex="4">
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <input type="text" name="cidade" id="cidade" class="form-control input-lg" placeholder="Cidade" tabindex="5">
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <input type="text" name="bairro" id="bairro" class="form-control input-lg" placeholder="Bairro" tabindex="6">
+                                </div>
+                            </div>
+                        </div>                        
+
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <input type="text" name="cep" id="cep" class="form-control input-lg" placeholder="Cep" tabindex="5">
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <input type="text" name="cpf" id="cpf" class="form-control input-lg" onkeyup="mascaraCpf(this);" placeholder="CPF" tabindex="6">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <input type="text" name="complemento" id="complemento" class="form-control input-lg" placeholder="Complemento" tabindex="4">
+                        </div>
+
+                        <div class="row">
+                            <div class="col-xs-12 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <input type="password" name="password" id="password" required class="form-control input-lg" placeholder="Password" tabindex="5">
+                                </div>
+                            </div>
+                            <div class="col-xs-12 col-sm-6 col-md-6">
+                                <div class="form-group">
+                                    <input type="password" name="password_confirmation" required id="password_confirmation" class="form-control input-lg" placeholder="Confirm Password" tabindex="6">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-xs-4 col-sm-3 col-md-3">
+                                <span class="button-checkbox">
+                                    <button type="button" class="btn" data-color="info" tabindex="7">Eu Aceito</button>
+                                    <input type="checkbox" name="t_and_c" id="t_and_c" class="hidden" value="1">
+                                </span>
+                            </div>
+                            <div class="col-xs-8 col-sm-9 col-md-9">
+                                Ao clicar em <strong class="label label-primary">Registrar</strong>, você concorda <a href="#" data-toggle="modal" data-target="#t_and_c_m">com os Termos e Condições </a> estabelecidos neste site, incluindo o uso de Cookies.
+                            </div>
+                        </div>
+
+                        <hr class="colorgraph">
+                        <div class="row">
+                            <div class="col-xs-12 col-md-6"><input type="button" value="Registrar" class="btn btn-primary btn-block btn-lg" 
+                                                                   tabindex="7" onclick=validarDados(this);></div>
+                            <div class="col-xs-12 col-md-6"><a href="painel/index.php" class="btn btn-success btn-block btn-lg">Efetuar Login</a></div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <!-- Modal -->
+            <div class="modal fade" id="t_and_c_m" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog modal-lg">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
+                            <h4 class="modal-title" id="myModalLabel">Termos e condições</h4>
+                        </div>
+                        <div class="modal-body">
+                            <p>Por Termo aqui.</p>
+                            <p>Por Termo aqui.</p>
+                            <p>Por Termo aqui.</p>
+                            <p>Por Termo aqui.</p>
+                            <p>Por Termo aqui.</p>
+                            <p>Por Termo aqui.</p>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Eu Aceito</button>
+                        </div>
+                    </div><!-- /.modal-content -->
+                </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+        </div>
+        <script type="text/javascript">
+            $(function () {
+                $('.button-checkbox').each(function () {
+
+                    // Settings
+                    var $widget = $(this),
+                            $button = $widget.find('button'),
+                            $checkbox = $widget.find('input:checkbox'),
+                            color = $button.data('color'),
+                            settings = {
+                                on: {
+                                    icon: 'glyphicon glyphicon-check'
+                                },
+                                off: {
+                                    icon: 'glyphicon glyphicon-unchecked'
+                                }
+                            };
+
+                    // Event Handlers
+                    $button.on('click', function () {
+                        $checkbox.prop('checked', !$checkbox.is(':checked'));
+                        $checkbox.triggerHandler('change');
+                        updateDisplay();
+                    });
+                    $checkbox.on('change', function () {
+                        updateDisplay();
+                    });
+
+                    // Actions
+                    function updateDisplay() {
+                        var isChecked = $checkbox.is(':checked');
+
+                        // Set the button's state
+                        $button.data('state', (isChecked) ? "on" : "off");
+
+                        // Set the button's icon
+                        $button.find('.state-icon')
+                                .removeClass()
+                                .addClass('state-icon ' + settings[$button.data('state')].icon);
+
+                        // Update the button's color
+                        if (isChecked) {
+                            $button
+                                    .removeClass('btn-default')
+                                    .addClass('btn-' + color + ' active');
+                        }
+                        else {
+                            $button
+                                    .removeClass('btn-' + color + ' active')
+                                    .addClass('btn-default');
+                        }
+                    }
+
+                    // Initialization
+                    function init() {
+
+                        updateDisplay();
+
+                        // Inject the icon if applicable
+                        if ($button.find('.state-icon').length == 0) {
+                            $button.prepend('<i class="state-icon ' + settings[$button.data('state')].icon + '"></i>');
+                        }
+                    }
+                    init();
+                });
+            });
+        </script>
+    </body>
 </html>

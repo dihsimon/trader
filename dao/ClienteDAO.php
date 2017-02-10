@@ -4,7 +4,8 @@ class ClienteDAO {
 
     function inserirClientes(Clientes $cliente) {
         include ("ConnectionFactory.php");
-        $sql = mysql_query("insert into clientes (dt_cadastro,
+        $senhacript = md5($cliente->getSenha() . "Kuhaku" . $cliente->getSenha());
+        $sql = mysql_query("insert into clientes (data_cadastro,
                                                         data_inicial,
                                                         data_final,
                                                         nome,
@@ -30,7 +31,7 @@ class ClienteDAO {
                 $cliente->getCidade() . "','" .
                 $cliente->getEmail() . "','" .
 		$cliente->getComplemento() . "','" .
-                $senha . "'," .
+                $senhacript . "'," .
                 $cliente->getNivel() . ")");
 
         switch (true) {
@@ -80,10 +81,10 @@ class ClienteDAO {
     }
 	
 
-    function buscarTodos() {
-        include ("Conexao.php");
+    function validarCPF($cpf) {
+        include ("ConnectionFactory.php");
 
-        $sql = mysql_query("select * from cliente");
+        $sql = mysql_query("select * from clientes where cpf = '$cpf';");
 
         switch (true) {
             case mysql_errno($db) > 0: {

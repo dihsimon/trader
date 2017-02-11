@@ -1,5 +1,7 @@
 <?php
-session_start();
+if (!isset($_SESSION)) {
+    session_start();
+}
 require_once("../util/ValidaLogin.php");
 require_once ("../model/Clientes.php");
 $cliente = new Clientes();

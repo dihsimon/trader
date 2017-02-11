@@ -9,43 +9,17 @@ class Clientes {
     private $dataInicial;
     private $dataFinal;
     private $nome;
-    private $sobrenome;
-    private $cpf;
-    private $endereco;
-    private $bairro;
-    private $cep;
-    private $cidade;
+    private $apelido;
     private $email;
-    private $complemento;
+    private $interesses;
+    private $areaAtuacao;
+    private $tempoTrader;
+    private $Telefone;
+    private $celular;
     private $senha;
+    private $facebook;
     private $nivel;
     
-    function getSobrenome() {
-        return $this->sobrenome;
-    }
-
-    function getEmail() {
-        return $this->email;
-    }
-
-    function getComplemento() {
-        return $this->complemento;
-    }
-
-    function setSobrenome($sobrenome) {
-        $this->sobrenome = $sobrenome;
-    }
-
-    function setEmail($email) {
-        $this->email = $email;
-    }
-
-    function setComplemento($complemento) {
-        $this->complemento = $complemento;
-    }
-
-        
-
     function getCodigo() {
         return $this->codigo;
     }
@@ -66,28 +40,44 @@ class Clientes {
         return $this->nome;
     }
 
-    function getCpf() {
-        return $this->cpf;
+    function getApelido() {
+        return $this->apelido;
     }
 
-    function getEndereco() {
-        return $this->endereco;
+    function getEmail() {
+        return $this->email;
     }
 
-    function getBairro() {
-        return $this->bairro;
+    function getInteresses() {
+        return $this->interesses;
     }
 
-    function getCep() {
-        return $this->cep;
+    function getAreaAtuacao() {
+        return $this->areaAtuacao;
     }
 
-    function getCidade() {
-        return $this->cidade;
+    function getTempoTrader() {
+        return $this->tempoTrader;
     }
 
-    function getCodigoPlano() {
-        return $this->codigoPlano;
+    function getTelefone() {
+        return $this->Telefone;
+    }
+
+    function getCelular() {
+        return $this->celular;
+    }
+
+    function getSenha() {
+        return $this->senha;
+    }
+
+    function getFacebook() {
+        return $this->facebook;
+    }
+
+    function getNivel() {
+        return $this->nivel;
     }
 
     function setCodigo($codigo) {
@@ -110,53 +100,46 @@ class Clientes {
         $this->nome = $nome;
     }
 
-    function setCpf($cpf) {
-        $this->cpf = $cpf;
+    function setApelido($apelido) {
+        $this->apelido = $apelido;
     }
 
-    function setEndereco($endereco) {
-        $this->endereco = $endereco;
+    function setEmail($email) {
+        $this->email = $email;
     }
 
-    function setBairro($bairro) {
-        $this->bairro = $bairro;
+    function setInteresses($interesses) {
+        $this->interesses = $interesses;
     }
 
-    function setCep($cep) {
-        $this->cep = $cep;
+    function setAreaAtuacao($areaAtuacao) {
+        $this->areaAtuacao = $areaAtuacao;
     }
 
-    function setCidade($cidade) {
-        $this->cidade = $cidade;
+    function setTempoTrader($tempoTrader) {
+        $this->tempoTrader = $tempoTrader;
     }
 
-    function setCodigoPlano($codigoPlano) {
-        $this->codigoPlano = $codigoPlano;
-    }
-	
-	function getLogin() {
-        return $this->login;
+    function setTelefone($Telefone) {
+        $this->Telefone = $Telefone;
     }
 
-    function getSenha() {
-        return $this->senha;
-    }
-
-    function getNivel() {
-        return $this->nivel;
-    }
-
-    function setLogin($login) {
-        $this->login = $login;
+    function setCelular($celular) {
+        $this->celular = $celular;
     }
 
     function setSenha($senha) {
         $this->senha = $senha;
     }
 
+    function setFacebook($facebook) {
+        $this->facebook = $facebook;
+    }
+
     function setNivel($nivel) {
         $this->nivel = $nivel;
     }
+
 
 }
 ?>

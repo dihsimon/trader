@@ -1,9 +1,9 @@
-<?php session_start();
+<?php
+session_start();
 require_once("../util/ValidaLogin.php");
 require_once ("../model/Clientes.php");
 $cliente = new Clientes();
 $cliente = unserialize($_SESSION['logado']);
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -54,7 +54,7 @@ $cliente = unserialize($_SESSION['logado']);
                             <img src="dist/img/administrator.png" class="img-circle" alt="User Image">
                         </div>
                         <div class="pull-left info">
-                            <p><?php echo "Olá, " . $cliente->getNome(); ?></p>
+                            <p><?php echo "Olá, " . $cliente->getApelido(); ?></p>
                             <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
                         </div>
                     </div>
@@ -70,17 +70,16 @@ $cliente = unserialize($_SESSION['logado']);
                     <!--INICIO MENU-->
                     <ul class="sidebar-menu">
                         <li class="header">MENU NAVEGAÇÃO</li>
+                        <li class="treeview">
+                            <a href="Principal.php">
+                                <i class="fa fa-dashboard"></i> <span>Home</span>
+                            </a>
+                        </li>
 
                         <li class="treeview">
-                            <a href="#">
-                                <i class="fa fa-dashboard"></i> <span>Cadastros</span> <i class="fa fa-angle-left pull-right"></i>
+                            <a href="AlterarClientes.php">
+                                <i class="fa fa-dashboard"></i> <span>Meu Cadastro</span> <i></i>
                             </a>
-                            <ul class="treeview-menu">
-                                //<?php if ($cliente->getNivel() == 2) { ?>
-                                    <li class="active"><a href="CadastroUsuario.php"><i class="fa fa-circle-o"></i> Usuários</a></li>
-                                //<?php } ?>
-                                <li><a href="CadastroArquivos.php"><i class="fa fa-circle-o"></i> Arquivos</a></li>
-                            </ul>
                         </li>
                         <li class="treeview">
                             <a href="#">

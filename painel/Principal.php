@@ -7,7 +7,7 @@ $cliente = unserialize($_SESSION['logado']);
 <div class="content-wrapper">
     <div class="box box-primary">
         <div class="box-header with-border">
-            <h3 class="box-title">Olá, <?php echo $cliente->getNome() . " " . $cliente->getSobrenome(); ?> Bem Vindo</h3>
+            <h3 class="box-title">Olá, <?php echo $cliente->getNome(); ?> Seja Bem Vindo</h3>
             <span class="label label-primary pull-right"><i class="fa fa-html5"></i></span>
         </div><!-- /.box-header -->
         <div class="box-body">

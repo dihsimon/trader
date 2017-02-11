@@ -63,16 +63,17 @@ class ClienteDAO {
             case mysql_errno($db) == 0: {
                     $consulta = mysql_fetch_object($sql);
                     $cliente->setNome($consulta->nome);
-                    $cliente->setSobrenome($consulta->sobrenome);
+                    $cliente->setApelido($consulta->apelido);
                     $cliente->setDataCadastro($consulta->dt_cadastro);
                     $cliente->setDataInicial($consulta->dt_inicial);
                     $cliente->setDataFinal($consulta->dt_final);
-                    $cliente->setCpf($consulta->cpf);
-                    $cliente->setEndereco($consulta->endereco);
-                    $cliente->setCep($consulta->cep);
-                    $cliente->setComplemento($consulta->complemento);
-                    $cliente->setCidade($consulta->cidade);
                     $cliente->setEmail($consulta->email);
+                    $cliente->setInteresses($consulta->interesses);
+                    $cliente->setAreaAtuacao($consulta->area_atuacao);
+                    $cliente->setTempoTrader($consulta->tempo_trader);
+                    $cliente->setTelefone($consulta->telefone);
+                    $cliente->setCelular($consulta->celular);
+                    $cliente->setFacebook($consulta->facebook);
                     $cliente->setNivel($consulta->nivel); // 1 administrador - 2 usuário
                     break;
                 }
@@ -179,21 +180,19 @@ class ClienteDAO {
         return $cliente;
     }
 
-    function alterar(Cliente $cliente) {
-        include ("Conexao.php");
+    function alterar(Clientes $cliente) {
+        include ("ConnectionFactory.php");
+        $senhacript = md5($cliente->getSenha() . "Kuhaku" . $cliente->getSenha());
         $sql = mysql_query("update cliente set nome='" . $cliente->getNome() . "',
+                                               apelido='" . $cliente->getApelido() . "',
+                                               email='" . $cliente->getEmail() . "',
+                                               interesses='" . $cliente->getInteresses() . "',
+                                               area_atuacao='" . $cliente->getAreaAtuacao() . "',
+                                               tempo_trader='" . $cliente->getTempoTrader() . "',
                                                telefone='" . $cliente->getTelefone() . "',
                                                celular='" . $cliente->getCelular() . "',
-                                               email='" . $cliente->getEmail() . "',
-                                               observacao='" . $cliente->getObservacao() . "',
-                                               logradouro='" . $cliente->getLogradouro() . "',
-                                               numero='" . $cliente->getNumero() . "',
-                                               bairro='" . $cliente->getBairro() . "',
-                                               cidade='" . $cliente->getCidade() . "',
-                                               estado='" . $cliente->getEstado() . "',
-                                               cpf='" . $cliente->getCpf() . "', 
-                                               celular='" . $cliente->getCelular() . "',
-                                               porcentagem=" . $cliente->getPorcentagem() . "
+                                               facebook='" . $cliente->getFacebook() . "',
+                                               senha='" . $senhacript . "'
                                                where codigo=" . $cliente->getCodigo());
 
         switch (true) {

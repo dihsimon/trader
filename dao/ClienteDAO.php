@@ -75,6 +75,7 @@ class ClienteDAO {
                     $cliente->setCelular($consulta->celular);
                     $cliente->setFacebook($consulta->facebook);
                     $cliente->setNivel($consulta->nivel); // 1 administrador - 2 usuário
+                    $cliente->setCodigo($consulta->codigo); 
                     break;
                 }
         }
@@ -147,10 +148,12 @@ class ClienteDAO {
         return 1;
     }
 
-    function buscarPorC(Cliente $cliente) {
-        include ("Conexao.php");
+    function buscarPorCodigo(Clientes $cliente) {
+        echo "<script>alert('Alterado com Sucesso.');</script>";
+        include ("ConnectionFactory.php");
 
-        $sql = mysql_query("Select * from cliente where codigo=" . $cliente->getCodigo());
+           echo "caiu codigo" .$cliente->getCodigo();
+        $sql = mysql_query("Select * from clientes where codigo=" . $cliente->getCodigo());
 
         switch (true) {
             case mysql_errno($db) > 0: {
@@ -158,21 +161,22 @@ class ClienteDAO {
                     break;
                 }
             case mysql_errno($db) == 0: {
-                    $consulta = mysql_fetch_array($sql);
-                    $cliente->setNome($consulta[1]);
-                    $cliente->setTelefone($consulta[2]);
-                    $cliente->setCelular($consulta[3]);
-                    $cliente->setEmail($consulta[4]);
-                    $cliente->setObservacao($consulta[5]);
-                    $cliente->setLogradouro($consulta[6]);
-                    $cliente->setNumero($consulta[7]);
-                    $cliente->setBairro($consulta[8]);
-                    $cliente->setCidade($consulta[9]);
-                    $cliente->setEstado($consulta[10]);
-                    $cliente->setRg($consulta[11]);
-                    $cliente->setCpf($consulta[12]);
-                    $cliente->setPorcentagem($consulta[13]);
-                    $cliente->setCodigo($consulta[0]);
+                    echo "consulta";
+                    $consulta = mysql_fetch_object($sql);
+                    $cliente->setNome($consulta->nome);
+                    $cliente->setApelido($consulta->apelido);
+                    $cliente->setDataCadastro($consulta->dt_cadastro);
+                    $cliente->setDataInicial($consulta->dt_inicial);
+                    $cliente->setDataFinal($consulta->dt_final);
+                    $cliente->setEmail($consulta->email);
+                    $cliente->setInteresses($consulta->interesses);
+                    $cliente->setAreaAtuacao($consulta->area_atuacao);
+                    $cliente->setTempoTrader($consulta->tempo_trader);
+                    $cliente->setTelefone($consulta->telefone);
+                    $cliente->setCelular($consulta->celular);
+                    $cliente->setFacebook($consulta->facebook);
+                    $cliente->setNivel($consulta->nivel); // 1 administrador - 2 usuário
+                    $cliente->setCodigo($consulta->codigo);
 
                     break;
                 }
@@ -183,7 +187,7 @@ class ClienteDAO {
     function alterar(Clientes $cliente) {
         include ("ConnectionFactory.php");
         $senhacript = md5($cliente->getSenha() . "Kuhaku" . $cliente->getSenha());
-        $sql = mysql_query("update cliente set nome='" . $cliente->getNome() . "',
+        $sql = mysql_query("update clientes set nome='" . $cliente->getNome() . "',
                                                apelido='" . $cliente->getApelido() . "',
                                                email='" . $cliente->getEmail() . "',
                                                interesses='" . $cliente->getInteresses() . "',
@@ -194,7 +198,6 @@ class ClienteDAO {
                                                facebook='" . $cliente->getFacebook() . "',
                                                senha='" . $senhacript . "'
                                                where codigo=" . $cliente->getCodigo());
-
         switch (true) {
             case mysql_errno($db) > 0: {
                     echo "Erro: " . mysql_errno() . "-" . mysql_error($db);
@@ -204,6 +207,7 @@ class ClienteDAO {
                 }
             case mysql_errno($db) == 0: {
                     $query = mysql_query("COMMIT");
+                    
                     return 0;
                     break;
                 }

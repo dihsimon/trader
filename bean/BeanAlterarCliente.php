@@ -30,13 +30,13 @@
             echo ("<div class='divLoading' id='topo'>");
             echo ("<img src='../imagens/carregando.gif' width='250' height='250'/> ");
             echo ("</div>");
-            echo "<meta http-equiv='refresh' content='1;url=../painel/index.php'>";
+            echo "<meta http-equiv='refresh' content='1;url=../painel/Principal.php'>";
         } else {
             echo "<script>alert('Erro ao efetuar o cadastro.');</script>";
             echo ("<div class='divLoading' id='topo'>");
             echo ("<img src='../imagens/carregando.gif' width='250' height='250'/> ");
             echo ("</div>");
-            echo "<meta http-equiv='refresh' content='1;url=../cadastro/index.html'>";
+            echo "<meta http-equiv='refresh' content='1;url=../painel/AlterarClientes.php'>";
             die();
         }
         ?>

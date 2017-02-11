@@ -6,20 +6,51 @@ $cliente = unserialize($_SESSION['logado']);
 ?>
 <script type="text/javascript">
     function validarDados() {
-        var titulo = document.getElementById("titulo").value;
-        if (titulo == "") {
-            alert("Titulo deve ser informado.");
-            return;
-        }
+                var nome = document.getElementById("nome").value;
+                if (nome == "") {
+                    alert("Nome deve ser informado.");
+                    return;
+                }
+                var apelido = document.getElementById("apelido").value;
+                if (apelido == "") {
+                    alert("Apelido deve ser informado.");
+                    return;
+                }
+                var email = document.getElementById("email").value;
+                if (email == "") {
+                    alert("E-mail deve ser informado.");
+                    return;
+                }
+                var interesses = document.getElementById("interesses").value;
+                if (interesses == "") {
+                    alert("Interesses deve ser informado.");
+                    return;
+                }
+                var area_atuacao = document.getElementById("area").value;
+                if (area_atuacao == "") {
+                    alert("Area Atuação deve ser informado.");
+                    return;
+                }
 
-        var pdf = document.getElementById("pdf").value;
-        if (pdf == "") {
-            alert("O arquivo deve ser selecionado.");
-            return;
-        }
+                var telefone = document.getElementById("telefone").value;
+                if (telefone == "") {
+                    alert("Telefone deve ser informado.");
+                    return;
+                }
+                var celular = document.getElementById("celular").value;
+                if (celular == "") {
+                    alert("Celular deve ser informado.");
+                    return;
+                }
 
-        document.forms['formulario'].submit();
-    }
+                var password = document.getElementById("password").value;
+                if (password == "") {
+                    alert("Senha deve ser informado.");
+                    return;
+                }
+
+                document.forms['formulario'].submit();
+            }
 </script>
 <div class="content-wrapper">
     <!-- Content Header (Page header) -->
@@ -45,7 +76,7 @@ $cliente = unserialize($_SESSION['logado']);
                     <button class="btn btn-box-tool" data-widget="remove"><i class="fa fa-remove"></i></button>
                 </div>
             </div>
-            <form action="../bean/BeanCadArquivos.php" method="POST" id="formulario" role="form" enctype="multipart/form-data">
+            <form action="../bean/BeanAlterarCliente.php" method="POST" id="formulario" role="form" enctype="multipart/form-data">
                 <div class="box-body">
                     <div class="row">
                         <div class="col-md-6">

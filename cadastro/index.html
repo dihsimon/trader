@@ -39,54 +39,43 @@
                     alert("Nome deve ser informado.");
                     return;
                 }
-                var sobrenome = document.getElementById("sobrenome").value;
-                if (sobrenome == "") {
-                    alert("Sobrenome deve ser informado.");
+                var apelido = document.getElementById("apelido").value;
+                if (apelido == "") {
+                    alert("Apelido deve ser informado.");
                     return;
                 }
-                var endereco = document.getElementById("endereco").value;
-                if (endereco == "") {
-                    alert("Endereço deve ser informado.");
+                var email = document.getElementById("email").value;
+                if (email == "") {
+                    alert("E-mail deve ser informado.");
                     return;
                 }
-                var cep = document.getElementById("cep").value;
-                if (cep == "") {
-                    alert("CEP deve ser informado.");
+                var interesses = document.getElementById("interesses").value;
+                if (interesses == "") {
+                    alert("Interesses deve ser informado.");
+                    return;
+                }
+                var area_atuacao = document.getElementById("area").value;
+                if (area_atuacao == "") {
+                    alert("Area Atuação deve ser informado.");
                     return;
                 }
 
-                var cpf = document.getElementById("cpf").value;
-                if (cpf == "") {
-                    alert("CPF deve ser informado.");
+                var telefone = document.getElementById("telefone").value;
+                if (telefone == "") {
+                    alert("Telefone deve ser informado.");
                     return;
                 }
-                var cidade = document.getElementById("cidade").value;
-                if (cidade == "") {
-                    alert("Cidade deve ser informado.");
+                var celular = document.getElementById("celular").value;
+                if (celular == "") {
+                    alert("Celular deve ser informado.");
                     return;
                 }
-                var bairro = document.getElementById("bairro").value;
-                if (bairro == "") {
-                    alert("Bairro deve ser informado.");
-                    return;
-                }
-                
+
                 var password = document.getElementById("password").value;
                 if (password == "") {
                     alert("Senha deve ser informado.");
                     return;
                 }
-                var password_confirmation = document.getElementById("password_confirmation").value;
-                if (password_confirmation == "") {
-                    alert("Confirmação da senha deve ser informado");
-                    return;
-                }
-
-                if (password.length < 6 && password_confirmation < 6) {
-                    alert("Senha deve conter mais que 6 caracteres");
-                    return;
-                }
-
 
                 document.forms['formulario'].submit();
             }
@@ -108,7 +97,7 @@
                             </div>
                             <div class="col-xs-12 col-sm-6 col-md-6">
                                 <div class="form-group">
-                                    <input type="text" name="sobrenome" id="sobrenome" class="form-control input-lg" placeholder="Sobrenome" tabindex="2">
+                                    <input type="text" name="apelido" id="apelido" class="form-control input-lg" placeholder="Apelido" tabindex="2">
                                 </div>
                             </div>
                         </div>
@@ -118,17 +107,23 @@
 
 
                         <div class="form-group">
-                            <input type="text" name="endereco" id="endereco" class="form-control input-lg" placeholder="Endereço" tabindex="4">
+                            <input type="text" name="interesses" id="interesses" class="form-control input-lg" placeholder="Interesses" tabindex="4">
                         </div>
                         <div class="row">
                             <div class="col-xs-12 col-sm-6 col-md-6">
                                 <div class="form-group">
-                                    <input type="text" name="cidade" id="cidade" class="form-control input-lg" placeholder="Cidade" tabindex="5">
+                                    <input type="text" name="area" id="area" class="form-control input-lg" placeholder="Área Atuação" tabindex="5">
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-6 col-md-6">
                                 <div class="form-group">
-                                    <input type="text" name="bairro" id="bairro" class="form-control input-lg" placeholder="Bairro" tabindex="6">
+                                    <select name="tempo_trader" id="tempo_trader" class="form-control input-lg">
+                                        <option value="0">Quanto Tempo no Trade?</option>
+                                        <option value="Nunca Operei">Nunca Operei</option>
+                                        <option value="Menos 1 Ano">Menos 1 Ano</option>
+                                        <option value="Entre 1 Ano e 2">Entre 1 Ano e 2</option>
+                                        <option value="Mais 2 Anos">Mais 2 Anos</option>
+                                    </select>
                                 </div>
                             </div>
                         </div>                        
@@ -136,28 +131,25 @@
                         <div class="row">
                             <div class="col-xs-12 col-sm-6 col-md-6">
                                 <div class="form-group">
-                                    <input type="text" name="cep" id="cep" class="form-control input-lg" placeholder="Cep" tabindex="5">
+                                    <input type="text" name="telefone" id="telefone" class="form-control input-lg" onkeyup="mascaraTelefone(this);" placeholder="Telefone" tabindex="5">
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-6 col-md-6">
                                 <div class="form-group">
-                                    <input type="text" name="cpf" id="cpf" class="form-control input-lg" onkeyup="mascaraCpf(this);" placeholder="CPF" tabindex="6">
+                                    <input type="text" name="celular" id="celular" class="form-control input-lg" onkeyup="mascaraCelular(this);" placeholder="Celular" tabindex="6">
                                 </div>
                             </div>
-                        </div>
-                        <div class="form-group">
-                            <input type="text" name="complemento" id="complemento" class="form-control input-lg" placeholder="Complemento" tabindex="4">
                         </div>
 
                         <div class="row">
                             <div class="col-xs-12 col-sm-6 col-md-6">
                                 <div class="form-group">
-                                    <input type="password" name="password" id="password" required class="form-control input-lg" placeholder="Password" tabindex="5">
+                                    <input type="text" name="facebook" id="facebook" required class="form-control input-lg" placeholder="Facebook.com/" tabindex="5">
                                 </div>
                             </div>
                             <div class="col-xs-12 col-sm-6 col-md-6">
                                 <div class="form-group">
-                                    <input type="password" name="password_confirmation" required id="password_confirmation" class="form-control input-lg" placeholder="Confirm Password" tabindex="6">
+                                    <input type="password" name="password" required id="password" class="form-control input-lg" placeholder="Password" tabindex="6">
                                 </div>
                             </div>
                         </div>
@@ -176,7 +168,7 @@
                         <hr class="colorgraph">
                         <div class="row">
                             <div class="col-xs-12 col-md-6"><input type="button" value="Registrar" class="btn btn-primary btn-block btn-lg" 
-                                                                   tabindex="7" onclick=validarDados(this);></div>
+                                                                   tabindex="7" onclick="validarDados(this);"></div>
                             <div class="col-xs-12 col-md-6"><a href="painel/index.php" class="btn btn-success btn-block btn-lg">Efetuar Login</a></div>
                         </div>
                     </form>

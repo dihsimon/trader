@@ -9,28 +9,27 @@ class ClienteDAO {
                                                         data_inicial,
                                                         data_final,
                                                         nome,
-                                                        sobrenome,
-                                                        cpf,
-                                                        endereco,
-                                                        bairro,
-                                                        cep,
-                                                        cidade,
+                                                        apelido,
                                                         email,
-                                                        complemento,
+                                                        interesses,
+                                                        area_atuacao,
+                                                        tempo_trader,
+                                                        telefone,
+                                                        celular,
+                                                        facebook,
                                                         senha,
                                                         nivel)
                                                         values (" . $cliente->getDataCadastro() . ",'" .
                 $cliente->getDataInicial() . "','" .
                 $cliente->getDataFinal() . "','" .
                 $cliente->getNome() . "','" .
-                $cliente->getSobrenome() . "','" .
-                $cliente->getCpf() . "','" .
-                $cliente->getEndereco() . "','" .
-                $cliente->getBairro() . "','" .
-                $cliente->getCep() . "','" .
-                $cliente->getCidade() . "','" .
+                $cliente->getApelido() . "','" .
                 $cliente->getEmail() . "','" .
-                $cliente->getComplemento() . "','" .
+                $cliente->getInteresses() . "','" .
+                $cliente->getAreaAtuacao() . "','" .
+                $cliente->getTempoTrader() . "','" .
+                $cliente->getTelefone() . "','" .
+                $cliente->getCelular() . "','" .
                 $senhacript . "'," .
                 $cliente->getNivel() . ")");
 

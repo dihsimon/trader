@@ -30,6 +30,7 @@ class ClienteDAO {
                 $cliente->getTempoTrader() . "','" .
                 $cliente->getTelefone() . "','" .
                 $cliente->getCelular() . "','" .
+                $cliente->getFacebook() . "','" .
                 $senhacript . "'," .
                 $cliente->getNivel() . ")");
 
